@@ -1,0 +1,172 @@
+@use 'variables' as *;
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 48px;
+
+  @include max-lg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contacts-social {}
+
+.contacts-social__title {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 14px;
+  color: #0041a5;
+  font-family: 'PT Astra Serif';
+
+  span {
+    background: linear-gradient(90deg, #72abdc, #0041a5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.contacts-social__items {
+  display: flex;
+  gap: 6px;
+}
+
+.contacts-social__item {
+  display: flex;
+}
+
+.contacts-data {}
+
+.contacts-data>*+* {
+  margin-top: 15px;
+}
+
+.contacts-data__address {
+  margin-bottom: 36px;
+}
+
+.contacts-data__address-title {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0041a5;
+  font-family: 'PT Astra Serif';
+
+  span {
+    background: linear-gradient(90deg, #72abdc, #0041a5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.contacts-data__address-content {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.contacts-data__phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contacts-data__phone-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-data__phone-value {
+  display: block;
+  font-size: 24px;
+  font-family: 'PT Astra Serif';
+  font-weight: bold;
+  line-height: 1;
+  color: #0041a5;
+  background: linear-gradient(90deg, #72abdc, #0041a5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include max-md {
+    font-size: 20px;
+  }
+}
+
+.contacts-data__email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contacts-data__email-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts-data__email-value {
+  display: block;
+  font-size: 24px;
+  font-family: 'PT Astra Serif';
+  font-weight: bold;
+  line-height: 1;
+  color: #0041a5;
+  background: linear-gradient(90deg, #72abdc, #0041a5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include max-md {
+    font-size: 20px;
+  }
+}
+
+.contacts-map {
+  grid-row: 2 / 3;
+  grid-column: 1 / 4;
+  position: relative;
+  aspect-ratio: 12 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+
+  >div {
+    width: 100%;
+    height: 100%;
+
+    >iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // iframe {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+
+  @include max-lg {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
+  @include max-md {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    aspect-ratio: 12 / 8;
+  }
+}

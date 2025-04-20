@@ -1,0 +1,250 @@
+@use 'variables' as *;
+
+.photoalbum-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max-lg {
+    gap: 24px;
+  }
+  @include max-md {
+    gap: 8px;
+  }
+}
+
+.photoalbum-grid__cell {
+  margin-top: 216px;
+  display: flex;
+
+  @include max-md {
+    margin-top: 80px;
+  }
+}
+
+.photoalbum-carousel {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photoalbum-carousel-main {
+  --main-slide-spacing: 20px;
+  --main-slide-size: 100%;
+
+  @include max-md {
+    --main-slide-spacing: 12px;
+  }
+}
+
+.photoalbum-carousel-main__viewport {
+  overflow: hidden;
+  position: relative;
+}
+
+.photoalbum-carousel-main__prev {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ebebeb;
+  color: #b2b8c2;
+
+  &:hover {
+    color: #474747;
+    background-color: rgba(231, 235, 238, 0.95);
+  }
+
+  &[disabled] {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  @include max-md {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.photoalbum-carousel-main__next {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ebebeb;
+  color: #b2b8c2;
+
+  &:hover {
+    color: #474747;
+    background-color: rgba(231, 235, 238, 0.95);
+  }
+
+  &[disabled] {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  @include max-md {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.photoalbum-carousel-main__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--main-slide-spacing) * -1);
+}
+
+.photoalbum-carousel-main__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--main-slide-size);
+  min-width: 0;
+  padding-left: var(--main-slide-spacing);
+}
+
+.photoalbum-carousel-main__slide__image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
+  background: url('../images/cross-pattern.png');
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include max-md {
+    border-radius: 12px;
+  }
+}
+
+.photoalbum-carousel-main__slide__image__loupe {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  color: #fff;
+  border-radius: 30px;
+  background-color: rgba(40, 40, 40, 0.8);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  opacity: 0;
+  transition: .3s ease;
+
+  @include max-md {
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+.photoalbum-carousel-main__slide__image:hover .photoalbum-carousel-main__slide__image__loupe {
+  opacity: 1;
+}
+
+.photoalbum-carousel-thumbs {
+  --thumbs-slide-spacing: 20px;
+  --thumbs-slide-size: 20%;
+  margin-top: var(--thumbs-slide-spacing);
+
+  @include max-md {
+    --thumbs-slide-spacing: 12px;
+  }
+}
+
+.photoalbum-carousel-thumbs__viewport {
+  overflow: hidden;
+}
+
+.photoalbum-carousel-thumbs__container {
+  display: flex;
+  flex-direction: row;
+  margin-left: calc(var(--thumbs-slide-spacing) * -1);
+}
+
+.photoalbum-carousel-thumbs__slide {
+  flex: 0 0 var(--thumbs-slide-size);
+  min-width: 0;
+  padding-left: var(--thumbs-slide-spacing);
+}
+
+.photoalbum-carousel-thumbs__slide__thumb {
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffd151;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include max-md {
+    border-radius: 12px;
+  }
+}
+
+.embla-thumbs__slide--selected .photoalbum-carousel-thumbs__slide__thumb::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #ffd151;
+  border-radius: 24px;
+
+  @include max-md {
+    border-radius: 12px;
+  }
+}

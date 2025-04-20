@@ -1,0 +1,317 @@
+@use 'variables' as *;
+
+.clergy-ministers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max-lg {
+    gap: 24px;
+  }
+  @include max-md {
+    gap: 8px;
+  }
+}
+
+.clergy-ministers__item {
+  margin-top: 216px;
+  display: flex;
+
+  @include max-md {
+    margin-top: 80px;
+  }
+}
+
+.clergy-minister {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(228, 233, 240);
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  padding: 32px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  @include max-lg {
+    padding: 24px;
+  }
+  @include max-md {
+    padding: 12px;
+    border-radius: 16px;
+  }
+}
+
+.clergy-minister__image {
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 290px;
+    width: auto;
+    max-width: unset;
+  }
+
+  @include max-md {
+    max-width: 116px;
+    img {
+      height: 168px;
+    }
+  }
+}
+
+.clergy-minister__rank {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: 'PT Astra Serif';
+  color: rgb(148, 114, 83);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+
+  @include max-md {
+    font-size: 14px;
+  }
+}
+
+.clergy-minister__name {
+  margin-top: 20px;
+  font-size: 28px;
+  font-family: 'PT Astra Serif';
+  color: rgb(30, 40, 57);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+
+  @include max-md {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+
+.clergy-minister__grow {
+  flex-grow: 1;
+}
+
+.clergy-minister__description {
+  margin-top: 10px;
+  font-size: 18px;
+  color: rgb(85, 96, 107);
+  line-height: 1.333;
+  text-align: center;
+
+  @include max-md {
+    font-size: 12px;
+  }
+}
+
+.clergy-minister__details {
+  margin-top: 16px;
+  font-size: 20px;
+  font-family: 'PT Astra Serif';
+  color: #b7866d;
+  font-style: italic;
+  line-height: 1.25;
+  text-align: center;
+  border-bottom: 1px solid currentColor;
+  display: block;
+  span {
+    background: linear-gradient(90deg, #b7866d, #7f5a44);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &:hover {
+    color: rgb(244, 152, 127);
+    span {
+      background: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: unset;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include max-xl {
+    font-size: 18px;
+  }
+  @include max-md {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.minister-details {
+  margin-bottom: 96px;
+
+  @include max-lg {
+    margin-bottom: 64px;
+  }
+  @include max-md {
+    margin-bottom: 48px;
+  }
+}
+
+.minister-details__description {
+  font-size: 28px;
+  color: rgb(98, 111, 124);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 56px;
+
+  @include max-lg {
+    margin-bottom: 48px;
+  }
+  @include max-md {
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+}
+
+.minister-details__photo {
+  display: flex;
+  justify-content: center;
+}
+
+.minister-awards {
+  margin-top: 124px;
+  margin-bottom: 156px;
+
+  @include max-lg {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+  @include max-md {
+    margin-top: 48px;
+    margin-bottom: 0;
+  }
+}
+
+.minister-awards__title {
+  font-size: 36px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #1e2839;
+  font-family: 'PT Astra Serif';
+  text-align: center;
+  padding-bottom: 56px;
+  position: relative;
+  margin-bottom: 68px;
+
+  @include max-lg {
+    font-size: 32px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+  @include max-md {
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.minister-awards__title::after {
+  content: '';
+  display: block;
+  background: url('../images/divider2.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  width: 186px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+
+  @include max-lg {
+    width: calc(186px * 0.8);
+    height: calc(31px * 0.8);
+  }
+  @include max-md {
+    width: calc(186px * 0.6);
+    height: calc(31px * 0.6);
+  }
+}
+
+.minister-awards__items {
+  columns: 2;
+  column-gap: 40px;
+  margin: 0 40px;
+
+  @include max-xl {
+    column-gap: 24px;
+    margin: 0 24px;
+  }
+  @include max-lg {
+    column-gap: 24px;
+    margin: 0;
+  }
+  @include max-md {
+    columns: 1;
+  }
+}
+
+.minister-awards__item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include max-md {
+    margin-bottom: 12px;
+  }
+}
+
+.minister-awards__item-text {
+  font-size: 22px;
+  color: rgb(95, 95, 95);
+  line-height: 24px;
+  position: relative;
+  padding-left: 40px;
+  display: inline-block;
+
+  @include max-md {
+    font-size: 18px;
+    line-height: 20px;
+    padding-left: 32px;
+  }
+}
+
+.minister-awards__item-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: url('../images/list-pattern.png') no-repeat 50% 50%;
+  background-size: cover;
+
+  @include max-md {
+    width: 20px;
+    height: 20px;
+  }
+}

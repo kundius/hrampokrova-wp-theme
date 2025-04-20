@@ -1,0 +1,284 @@
+@use 'variables' as *;
+
+.schedule-weeks {}
+
+.contacts-social__items {}
+
+.schedule-week+.schedule-week {
+  margin-top: 60px;
+
+  @include max-lg {
+    margin-top: 48px;
+  }
+
+  @include max-md {
+    margin-top: 32px;
+  }
+}
+
+.schedule-week__title {
+  font-size: 28px;
+  color: rgb(98, 111, 124);
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 32px;
+  text-wrap: balance;
+
+  @include max-lg {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  @include max-md {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+.schedule-week__days {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+
+  @include max-lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include max-md {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
+
+.schedule-item {
+  flex-grow: 1;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(129, 140, 156, 0.2);
+  padding: 24px 30px 54px;
+
+  &.schedule-item_weekend {
+    background: url('../images/cross-pattern-red.png');
+  }
+
+  @include max-2xl {
+    border-radius: 24px;
+    padding: 20px 24px 48px;
+  }
+
+  @include max-xl {
+    padding: 16px 16px 32px;
+    border-radius: 16px;
+  }
+
+  @include max-md {
+    border-radius: 12px;
+    padding: 8px 12px 16px;
+    box-shadow: 0px 0px 6px rgba(129, 140, 156, 0.2);
+  }
+}
+
+.schedule-item__title {
+  font-size: 30px;
+  line-height: 1;
+  font-family: 'PT Astra Serif';
+  color: #7f5a44;
+  background-image: linear-gradient(90deg, #b7866d, #7f5a44);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+
+  .schedule-item_weekend & {
+    background-image: linear-gradient(90deg, rgb(215, 142, 142) 0%, rgb(229, 97, 93) 100%);
+  }
+
+  @include max-2xl {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  @include max-xl {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  @include max-md {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+}
+
+.schedule-item__date {
+  display: inline-flex;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  line-height: 30px;
+  padding: 0 16px;
+  border-radius: 15px;
+  background-image: linear-gradient(90deg, rgb(201, 168, 133) 0%, rgb(156, 124, 97) 100%);
+
+  .schedule-item_weekend & {
+    background-image: linear-gradient(90deg, rgb(215, 142, 142) 0%, rgb(229, 97, 93) 100%);
+  }
+
+  @include max-2xl {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 12px;
+    border-radius: 12px;
+  }
+
+  @include max-xl {
+    font-size: 14px;
+  }
+
+  @include max-md {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0 8px;
+    border-radius: 10px;
+  }
+}
+
+.schedule-item__desc {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: rgb(98, 111, 124);
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1;
+  min-height: 20px;
+  text-wrap: balance;
+
+  @include max-2xl {
+    min-height: 16px;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  @include max-xl {
+    min-height: 14px;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  @include max-md {
+    min-height: 12px;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+.schedule-item__rows {}
+
+.schedule-item__row+.schedule-item__row {
+  margin-top: 24px;
+
+  @include max-2xl {
+    margin-top: 20px;
+  }
+
+  @include max-xl {
+    margin-top: 16px;
+  }
+
+  @include max-md {
+    margin-top: 12px;
+  }
+}
+
+.schedule-item__row-title {
+  font-size: 18px;
+  font-family: 'PT Astra Serif';
+  color: rgb(165, 165, 165);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 10px;
+
+  .schedule-item_weekend & {
+    color: rgb(222, 67, 67);
+  }
+
+  @include max-2xl {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  @include max-xl {
+    font-size: 14px;
+  }
+
+  @include max-md {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+}
+
+.schedule-item__row-content {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 10px;
+
+  @include max-2xl {
+    column-gap: 8px;
+  }
+
+  @include max-md {
+    column-gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+.schedule-item__row-time {
+  font-size: 20px;
+  color: rgb(64, 64, 64);
+  line-height: 1.2;
+  width: 2.25em;
+  flex-shrink: 0;
+
+  @include max-2xl {
+    font-size: 16px;
+  }
+
+  @include max-xl {
+    font-size: 14px;
+  }
+}
+
+.schedule-item__row-arrow {
+  background: url('../images/arrow.png') no-repeat 50% 50%;
+  background-size: cover;
+  width: 18px;
+  height: 5px;
+  margin: 11px 0;
+  flex-shrink: 0;
+
+  @include max-2xl {
+    margin: 8px 0;
+  }
+
+  @include max-xl {
+    margin: 6px 0;
+  }
+}
+
+.schedule-item__row-name {
+  font-size: 20px;
+  font-family: 'PT Astra Sans';
+  color: rgb(64, 64, 64);
+  line-height: 1.2;
+  flex-grow: 1;
+
+  @include max-2xl {
+    font-size: 16px;
+  }
+
+  @include max-xl {
+    font-size: 14px;
+  }
+}
