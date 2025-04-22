@@ -105,6 +105,30 @@ body {
   }
 }
 
+.container_small {
+  width: 1280px;
+
+  @include max-3xl {
+    width: 1280px;
+  }
+
+  @include max-2xl {
+    width: 1280px;
+  }
+
+  @include max-xl {
+    width: 1024px;
+  }
+
+  @include max-lg {
+    width: 768px;
+  }
+
+  @include max-md {
+    width: 100%;
+  }
+}
+
 .content {
   font-size: 20px;
   color: rgb(64, 64, 64);

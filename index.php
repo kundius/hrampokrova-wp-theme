@@ -12,7 +12,7 @@
     <?php get_template_part('partials/header', null, ['placeholder' => true]); ?>
 
     <div class="pb-12 md:pb-16 lg:pb-24">
-      <div class="container">
+      <div class="container container_small">
         <div class="breadcrumbs">
           <a href="<?php echo get_the_permalink(2); ?>" class="breadcrumbs__link">
             <?php echo get_the_title(2); ?>
