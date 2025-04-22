@@ -1,10 +1,21 @@
 <?php if (isset($args['placeholder']) && $args['placeholder']): ?>
-<div class="header-placeholder"></div>
+  <div class="header-placeholder"></div>
 <?php endif; ?>
 
 <div class="header" data-sticky-header data-mobile-menu-state="closed">
   <div class="container header__container">
-    <a href="/" class="header__logo" title="<?php bloginfo('name'); ?>"></a>
+    <div class="header__logo">
+      <a href="/" class="header-logo" title="<?php bloginfo('name'); ?>">
+        <img src="<?php bloginfo('template_url') ?>/dist/assets/logo-small.png" class="header-logo__image" width="68" height="68" />
+        <span class="header-logo__text">
+          <span class="header-logo__text__first">Русская Православная Церковь</span>
+          <span class="header-logo__text__second">
+            Храм Покрова<br>
+            Пресвятой Богородицы
+          </span>
+        </span>
+      </a>
+    </div>
     <button class="header__toggle" type="button" data-mobile-menu-open>
       <span class="header__toggle-icon">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">

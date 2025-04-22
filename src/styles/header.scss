@@ -65,27 +65,105 @@
 }
 
 .header__logo {
-  display: block;
-  background: url('../images/logo.png') no-repeat 50% 50%;
-  background-size: cover;
-  width: 324px;
-  height: 53px;
+  // display: block;
+  // background: url('../images/logo.png') no-repeat 50% 50%;
+  // background-size: cover;
+  // width: 324px;
+  // height: 53px;
   margin-right: auto;
   flex-shrink: 0;
 
-  @include max-2xl {
-    width: calc(324px * 0.8);
-    height: calc(53px * 0.8);
-  }
+  // @include max-2xl {
+  //   width: calc(324px * 0.8);
+  //   height: calc(53px * 0.8);
+  // }
 
   @include max-xl {
     margin-right: unset;
   }
 
-  @include max-md {
-    width: calc(324px * 0.65);
-    height: calc(53px * 0.65);
+  // @include max-md {
+  //   width: calc(324px * 0.65);
+  //   height: calc(53px * 0.65);
+  // }
+
+
+  @include max-2xl {
+    .header-logo__image {
+      width: calc(68px * 0.8);
+      height: calc(68px * 0.8);
+    }
+
+    .header-logo__text__first {
+      font-size: calc(10px * 0.8);
+    }
+
+    .header-logo__text__second {
+      font-size: calc(16px * 0.8);
+      line-height: calc(18px * 0.8);
+    }
   }
+
+  @include max-md {
+    .header-logo__image {
+      width: calc(68px * 0.65);
+      height: calc(68px * 0.65);
+    }
+
+    .header-logo__text__first {
+      font-size: calc(10px * 0.65);
+    }
+
+    .header-logo__text__second {
+      font-size: calc(16px * 0.65);
+      line-height: calc(18px * 0.65);
+    }
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-logo__image {
+  width: 68px;
+  height: 68px;
+}
+
+.header-logo__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-logo__text__first {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.225em;
+  text-transform: uppercase;
+  color: #adadad;
+  font-weight: 400;
+
+  .page-template-template-home .header:not([data-sticky-header="active"]) & {
+    color: #d9d9d9;
+  }
+}
+
+.header-logo__text__second {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-family: 'PT Astra Serif';
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 18px;
+  color: #0041a5;
+  background: linear-gradient(90deg, #72abdc, #0041a5);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (min-width: $breakpoint-xl) {
@@ -552,7 +630,8 @@
     height: 32px;
     color: #fff;
     border-radius: 50%;
-    background: linear-gradient(90deg, #72abdc, #0041a5);
+    // background: #c9a885;
+    border: 2px solid #4e8acb;
   }
 }
 

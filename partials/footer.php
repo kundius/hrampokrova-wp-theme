@@ -1,7 +1,18 @@
 <section class="underground" itemscope itemtype="https://schema.org/Organization">
   <div class="container underground-layout">
     <div class="underground-layout__left">
-      <a href="/" class="underground-logo" title="<?php bloginfo('name'); ?>"></a>
+      <div class="underground-logo">
+        <a href="/" class="header-logo" title="<?php bloginfo('name'); ?>">
+          <img src="<?php bloginfo('template_url') ?>/dist/assets/logo-small.png" class="header-logo__image" width="68" height="68" />
+          <span class="header-logo__text">
+            <span class="header-logo__text__first">Русская Православная Церковь</span>
+            <span class="header-logo__text__second">
+              Храм Покрова<br>
+              Пресвятой Богородицы
+            </span>
+          </span>
+        </a>
+      </div>
 
       <div class="underground-contacts">
         <div class="underground-contacts__address">

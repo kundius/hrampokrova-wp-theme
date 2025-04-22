@@ -1,6 +1,7 @@
 import 'normalize.css'
 import './src/styles/main.scss'
 import './src/images/logo.png'
+import './src/images/logo-small.png'
 import './src/images/sprite.svg'
 import { initStickyHeader } from './src/scripts/sticky-header'
 import { initScheduleCarousel } from './src/scripts/schedule-carousel'
