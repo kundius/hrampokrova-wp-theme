@@ -85,7 +85,7 @@ add_action('wp_head', function () {
         echo '<meta property="og:image:height" content="1024">' . "\n";
     } else {
         echo '<meta property="og:image" content="https://hrampokrova-vrn.ru/wp-content/uploads/2025/04/4.jpg" />' . "\n";
-        echo '<meta property="og:image:width" content="1023">' . "\n";
-        echo '<meta property="og:image:height" content="1021">' . "\n";
+        echo '<meta property="og:image:width" content="685">' . "\n";
+        echo '<meta property="og:image:height" content="514">' . "\n";
     }
 });
