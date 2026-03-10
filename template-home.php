@@ -339,7 +339,7 @@ $events = new WP_Query($query_params);
             <div class="sunday-school-card">
               <div class="sunday-school-card__title">Воскресная школа</div>
               <div class="sunday-school-card__more">
-                <a href="<?php the_permalink(116); ?>" class="ui-more">Подробнее<span class="ui-more__arrow"></span></a>
+                <a href="<?php the_permalink(342); ?>" class="ui-more">Подробнее<span class="ui-more__arrow"></span></a>
               </div>
             </div>
           </div>
