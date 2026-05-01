@@ -29,6 +29,13 @@ function register_carbon_fields()
       Field::make('text', 'crb_seo_keywords', 'Ключевые слова'),
       Field::make('textarea', 'crb_seo_description', 'Описание'),
     ]);
+  
+  Container::make('post_meta', 'SEO')
+    ->where('post_type', '=', 'page')
+    ->or_where('post_type', '=', 'post')
+    ->add_fields([
+      Field::make('text', 'crb_test', 'test'),
+    ]);
 
   Container::make('post_meta', 'Подробности')
     ->where('post_type', '=', 'minister')
